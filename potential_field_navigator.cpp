@@ -13,6 +13,7 @@
 */
 using point2d = std::array<double, 2>;
 using wall_cordinates = std::pair<point2d, point2d>;
+
 inline point2d operator+(const point2d a, const point2d b)
 {
     return {a[0] + b[0], a[1] + b[1]};
@@ -109,11 +110,11 @@ int main(int argc, char** argv) {
     point2d currentPosition = {10.0, 1.0};
     double velocity = 0.1;
 
-//    std::pair<wall_cordinates, double> wall;
+
     std::vector<std::pair<wall_cordinates, double>> walls = {};
 
-    walls.push_back({{{5.0, 1.0},{8.0, 3.0}}, (argc > 1) ? std::stod(argv[1]) : 0.005});
-    walls.push_back({{{2.0, 0.0},{2.0,1.0}}, (argc > 1) ? std::stod(argv[1]) : 0.005});
+    walls.push_back({{{5.0, 1.0},{8.0, 3.0}}, (argc > 1) ? std::stod(argv[1]) : 0.05});
+    walls.push_back({{{2.0, 0.0},{2.0,1.0}}, (argc > 1) ? std::stod(argv[1]) : 0.05});
 
 
     auto field = [&](point2d p) -> double {
